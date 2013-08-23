@@ -5,6 +5,8 @@ that displays the status of your WordPress plugin.
 
 ## What does it look like?
 
+Something like this:
+
 ![Widget Image](https://raw.github.com/bonny/jQuery-WordPress-Plugin-Widget/master/screenshot.png)
 
 ## How do I use it?
