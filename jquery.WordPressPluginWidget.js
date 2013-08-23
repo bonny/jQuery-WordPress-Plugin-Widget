@@ -12,6 +12,12 @@
 		pushed_at = (date.getMonth() + 1) + '-' + date.getDate() + '-' + date.getFullYear();
 		$widget.find('.updated').html('Last updated on ' + pushed_at);
 
+                // Author url
+                var authors = results.contributors,
+                        authorName;
+                for (authorName in authors) break;
+                $widget.find('.owner').text( authorName ).attr("href", "http://profiles.wordpress.org/" + authorName);
+
 		// Plugin name
 		$widget.find('.repo').text( results.name );
 
@@ -54,7 +60,8 @@
 
 		var $container = $(this), $widget,
 			pluginSlug = $container.data('slug'),
-			pluginUrl = "http://wordpress.org/support/plugin/" + pluginSlug + "/"
+                        pluginUrl = "http://wordpress.org/support/plugin/" + pluginSlug + "/",
+                        authorUrl = "";
 			// vendorUrl = "http://github.com/" + vendorName,
 			// repoUrl = "http://github.com/" + vendorName + '/' + repoName;
 			// vendorName = repoName = vendorUrl = repoUrl = "";
@@ -63,8 +70,8 @@
 			'<div class="github-box repo">'
 			+'<div class="github-box-title">'
 			+'<h3>'
-			// +'<a class="owner" href="' + vendorUrl + '">' + vendorName + '</a>'
-			// +'/'
+                        +'<a class="owner" href=""></a>'
+                        +' / '
 			+'<a class="repo" href="' + pluginUrl + '">' + '&nbsp;</a>'
 			+'</h3>'
 			+'<div class="github-stats">'
