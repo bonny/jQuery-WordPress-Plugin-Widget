@@ -13,11 +13,10 @@ Something like this:
 
 Everwhere you want a widget to be placed, add the following markup:
 
-	<div class="wordpress-widget" data-slug="simple-fields"></div>
+	<div class="wordpress-widget" data-slug="slug-of-your-plugin"></div>
 
 Then include the javascript file somewhere after you've include jQuery:
 
 	<script type="text/javascript" src="jquery.WordPressPluginWidget.js"></script>
 
 That's it!
-
