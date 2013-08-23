@@ -13,7 +13,7 @@ Something like this:
 
 Everwhere you want a widget to be placed, add the following markup:
 
-	<div class="wordpress-widget" data-repo="JoelSutherland/GitHub-jQuery-Repo-Widget"></div>
+	<div class="wordpress-widget" data-slug="simple-fields"></div>
 
 Then include the javascript file somewhere after you've include jQuery:
 
