@@ -4,7 +4,7 @@ Drop this script on your page and it will build you a beautiful widget that disp
 
 ## What does it look like?
 
-![Widget Image](http://files.www.newmediacampaigns.com/blog/github-widget.png)
+![Widget Image](https://raw.github.com/bonny/jQuery-WordPress-Plugin-Widget/master/screenshot.png)
 
 ## How do I use it?
 
