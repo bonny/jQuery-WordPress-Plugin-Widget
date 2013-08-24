@@ -23,4 +23,6 @@ That's it!
 
 ## Credits
 
-This plugin is based on [GitHub jQuery Repo Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget). Here is the licence for that: [license](https://github.com/bonny/jQuery-WordPress-Plugin-Widget/blob/master/LICENSE-GitHub-jQuery-Repo-Widget).
+This plugin is based on [GitHub jQuery Repo Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget). I've only changed it to fetch data from WordPress.org instead of GitHub, and then I also changed it to look to be bit more WordPress-ish.
+
+The original licence in included in this foleder, and it's also available here: [license](https://github.com/bonny/jQuery-WordPress-Plugin-Widget/blob/master/LICENSE-GitHub-jQuery-Repo-Widget).
