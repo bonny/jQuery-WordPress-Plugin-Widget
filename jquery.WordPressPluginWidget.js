@@ -78,7 +78,13 @@ jQuery(document).ready(function($){
 
 		}
 
-		var output = "Downloads ";
+		var output = "";
+		
+		// Average downloads per day
+		output += "Average " + formatNumber(Math.round(loopcount / loopnum)) + " downloads per day";
+
+		/*
+		output += "Downloads ";
 		
 		if (downloads.oneDay)
 			output += " yesterday " + formatNumber(downloads.oneDay) + ", ";
@@ -97,6 +103,7 @@ jQuery(document).ready(function($){
 			output += " 1y " + formatNumber(downloads.year) + ", ";
 			output += "<img src='" + "https://chart.googleapis.com/chart?chs=50x20&cht=ls&chco=0077CC&chd=t:" + downloads.sparkLineDataYear.join(",") + "'>";
 		}
+		*/
 
 		$widget.find(".wordpress-box-download .downloads").html( output );
 	};
@@ -159,12 +166,12 @@ jQuery(document).ready(function($){
 			+ '.wordpress-box .wordpress-box-content p{margin:0}'
 			+ '.wordpress-box .wordpress-box-content .link{font-weight:bold}'
 			+ '.wordpress-box .wordpress-box-download{position:relative;border-top:1px solid #ddd;background:white;border-radius:0 0 3px 3px;padding:10px;min-height:24px}'
-			+ '.wordpress-box .wordpress-box-download .updated{margin:0;font-size:11px;color:#666;line-height:24px;font-weight:300}'
+			+ '.wordpress-box .wordpress-box-download .updated, .wordpress-box .wordpress-box-download .downloads{margin:0;font-size:11px;color:#666;line-height:16px;font-weight:300}'
 			+ '.wordpress-box .wordpress-box-download .updated strong{font-weight:bold;color:#000}'
 			+ '.wordpress-box .wordpress-box-download .download{position:absolute;display:block;top:10px;right:10px;height:24px;line-height:24px;font-size:12px;color:#666;font-weight:bold;text-shadow:0 1px 0 rgba(255,255,255,0.9);padding:0 10px;border:1px solid #ddd;border-bottom-color:#bbb;border-radius:3px;background:#f5f5f5;background:-moz-linear-gradient(#f5f5f5,#e5e5e5);background:-webkit-linear-gradient(#f5f5f5,#e5e5e5);}'
 			+ '.wordpress-box .wordpress-box-download .download:hover{color:#527894;border-color:#cfe3ed;border-bottom-color:#9fc7db;background:#f1f7fa;background:-moz-linear-gradient(#f1f7fa,#dbeaf1);background:-webkit-linear-gradient(#f1f7fa,#dbeaf1);}'
 			+ '.wordpress-stars-wrap, .wordpress-stars {background:url(http://wordpress.org/extend/plugins-plugins/bb-ratings/stars.png) bottom left;line-height:17px;}'
-			+ '.wordpress-stars-wrap {width:92px;height:17px;position:relative;overflow:hidden;opacity:.75;}'
+			+ '.wordpress-stars-wrap {width:92px;height:17px;position:relative;overflow:hidden;}'
 			+ '.wordpress-stars {background-position:top left;width:0;height:17px;float:left;text-indent:100%;}'
 			+ '.wordpress-stats, .wordpress-box-download, .wordpress-box-content { opacity:0; transition: all .25s ease-in-out; -webkit-transition: all .25s ease-in-out;}'
 			+ '.wordpress-box.is-loaded .wordpress-stats, .wordpress-box.is-loaded .wordpress-box-download, .wordpress-box.is-loaded .wordpress-box-content { opacity:1; }'
