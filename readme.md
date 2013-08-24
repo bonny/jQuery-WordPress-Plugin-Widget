@@ -9,6 +9,12 @@ Something like this:
 
 ![Widget Image](https://raw.github.com/bonny/jQuery-WordPress-Plugin-Widget/master/screenshot.png)
 
+## How about a real demo
+
+Sure! Here you go:
+
+[WordPress Plugin Widget Demo](http://eskapism.se/playground/widgets/jQuery-WordPress-Plugin-Widget/demo/index.html)
+
 ## How do I use it?
 
 Everwhere you want a widget to be placed, add the following markup:
