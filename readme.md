@@ -20,3 +20,8 @@ Then include the javascript file somewhere after you've include jQuery:
 	<script type="text/javascript" src="jquery.WordPressPluginWidget.js"></script>
 
 That's it!
+
+## Credits
+
+This plugin is based on (GitHub jQuery Repo Widget
+)[https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget]. Here is the licence for that: (license)[xxx].
