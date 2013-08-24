@@ -11,44 +11,40 @@
 			font-family: sans-serif;
 			margin: 5em;
 		}
+		.wordpress-widget {
+			float: left;
+			width: 500px;
+			margin: 0 3em 3em 0;
+		}
+		h2 {
+			clear: both;
+		}
 	</style>
 </head>
 <body>
-<div id="container">
-	
-<h1>Widget Examples</h1>
 
-<p>Examples for <a href="https://github.com/bonny/jQuery-WordPress-Plugin-Widget">jQuery WordPress Plugin Widget</a> by <a href="https://twitter.com/eskapism">@eskapism</a>.</p>
+	<h1>Widget Examples</h1>
 
-<div style="width: 600px;">
+	<p>Examples for <a href="https://github.com/bonny/jQuery-WordPress-Plugin-Widget">jQuery WordPress Plugin Widget</a> by <a href="https://twitter.com/eskapism">@eskapism</a>.</p>
 
+	<h2>Popular WordPress plugins</h2>
+	<div class="wordpress-widget" data-slug="jetpack"></div>
+	<div class="wordpress-widget" data-slug="developer"></div>
+	<div class="wordpress-widget" data-slug="wp-super-cache"></div>
+	<div class="wordpress-widget" data-slug="akismet"></div>
+	<div class="wordpress-widget" data-slug="w3-total-cache"></div>
+
+	<h2>Plugins by the author of this widget :)</h2>
 	<div class="wordpress-widget" data-slug="simple-fields"></div>
-
-	<br>
 	<div class="wordpress-widget" data-slug="ep-admin-messages"></div>
-
-	<br>
-        <div class="wordpress-widget" data-slug="simple-history"></div>
-
-        <br>
+	<div class="wordpress-widget" data-slug="simple-history"></div>
 	<div class="wordpress-widget" data-slug="cms-tree-page-view"></div>
+	<div class="wordpress-widget" data-slug="admin-menu-tree-page-view"></div>
+	<div class="wordpress-widget" data-slug="simple-seo"></div>
+	<div class="wordpress-widget" data-slug="simple-fields-map-extension"></div>
 
-        <br>
-        <div class="wordpress-widget" data-slug="admin-menu-tree-page-view"></div>
-
-        <br>
-        <div class="wordpress-widget" data-slug="simple-seo"></div>
-
-        <br>
-        <div class="wordpress-widget" data-slug="simple-fields-map-extension"></div>
-
-
-</div>
-
-</div>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="../jquery.WordPressPluginWidget.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../jquery.WordPressPluginWidget.js"></script>
 
 </body>
 </html>
