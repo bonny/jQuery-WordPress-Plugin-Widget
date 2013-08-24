@@ -125,12 +125,15 @@ jQuery(document).ready(function($){
 		$widget.find('.owner').text( authorName ).attr("href", "http://profiles.wordpress.org/" + authorName);
 
 		// Plugin name
+		$widget.find('.ownerRepoSpace').text( " by " );
+
+		// Plugin name
 		$widget.find('.repo').text( results.name );
 
 		// Ratings
-		var rating = ((results.rating / 100) * 5);
-		var stars_width = (results.rating / 100) * 92;
-		var ratingText = rating.toFixed(1) + " stars";
+		var rating = ((results.rating / 100) * 5),
+			stars_width = (results.rating / 100) * 92,
+			ratingText = rating.toFixed(1) + " stars";
 		$widget.find('.wordpress-stars').text(ratingText).css("width", stars_width);
 		$widget.find('.wordpress-stars-wrap').attr("title", ratingText);
 		$widget.find('.wordpress-rating').html( "From " + results.num_ratings + ( ( results.num_ratings === 1) ? " user." : " users.")  );
@@ -158,6 +161,7 @@ jQuery(document).ready(function($){
 			+ '.wordpress-box a{color:#4183c4;border:0;text-decoration:none}'
 			+ '.wordpress-box .wordpress-box-title{position:relative;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;background:#fcfcfc;background:-moz-linear-gradient(#fcfcfc,#ebebeb);background:-webkit-linear-gradient(#fcfcfc,#ebebeb);background: #222;color:#ddd;}'
 			+ '.wordpress-box-title a { color: #ddd;}'
+			+ '.wordpress-box-title a:hover { color: #2faadd;}'
 			+ '.wordpress-box .wordpress-box-title h3{font-family:helvetica,arial,sans-serif;font-weight:normal;font-size:16px;color:gray;margin:0 115px 0 0;padding:10px;}'
 			+ '.wordpress-box .wordpress-box-title h3 .repo{font-weight:bold}'
 			+ '.wordpress-box .wordpress-box-title .wordpress-stats{position:absolute;top:4px;right:10px;xbackground:white;xborder:1px solid #ddd;border-radius:3px;font-size:11px;xfont-weight:bold;line-height:18px;height:18px;padding:0 .5em}'
@@ -189,9 +193,9 @@ jQuery(document).ready(function($){
 			'<div class="wordpress-box">' +
 			'<div class="wordpress-box-title">' +
 			'<h3>' +
-			'<a class="owner" href=""></a>' +
-			' / ' +
 			'<a class="repo" href="' + pluginUrl + '">' + '&nbsp;</a>' +
+			'<span class="ownerRepoSpace"></span>' +
+			'<a class="owner" href=""></a>' +
 			'</h3>' +
 			'<div class="wordpress-stats">' +
 			'<div class="wordpress-stars-wrap"><div class="wordpress-stars"></div></div>' +
