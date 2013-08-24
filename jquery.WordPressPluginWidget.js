@@ -23,6 +23,80 @@ jQuery(document).ready(function($){
 	var box_title_png = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAXCAMAAAAx3e/WAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEQjIyNkJERkM0NjYxMUUxOEFDQzk3ODcxRDkzRjhCRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEQjIyNkJFMEM0NjYxMUUxOEFDQzk3ODcxRDkzRjhCRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRCMjI2QkREQzQ2NjExRTE4QUNDOTc4NzFEOTNGOEJFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkRCMjI2QkRFQzQ2NjExRTE4QUNDOTc4NzFEOTNGOEJFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+dka2KgAAAEVQTFRFxMTEyMjI0tLSvb29vr6+zc3Ny8vLxcXFz8/P6enp3t7ex8fH0dHR1NTUw8PDwMDAzs7OvLy8wcHBu7u7v7+/zMzM////budQFwAAABd0Uk5T/////////////////////////////wDmQOZeAAAAcklEQVR42tSQSQ7DMAwD6chOukWs5eX/Ty2coo0T9wOdEzEgdRBuzNmnDofgja52JDyz5TCqUp0O6kfrb4bzSXkRiTviEZZ6JKLMJ5VQ2v8iGbtbfEwXmjFMG0VwdQo10hQNxYqtLMv9O6xvpZ/QeAkwAKjwHiJLaJc3AAAAAElFTkSuQmCC';
 	//var stats_png = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAqCAMAAACEJ4viAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEQjIyNkJEQkM0NjYxMUUxOEFDQzk3ODcxRDkzRjhCRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEQjIyNkJEQ0M0NjYxMUUxOEFDQzk3ODcxRDkzRjhCRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRCMjI2QkQ5QzQ2NjExRTE4QUNDOTc4NzFEOTNGOEJFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkRCMjI2QkRBQzQ2NjExRTE4QUNDOTc4NzFEOTNGOEJFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+h1kA9gAAAK5QTFRF+fn5sbGx8fHx09PTmpqa2dnZ/f3919fX9PT00NDQ1dXVpKSk+vr6+/v7vb298vLyycnJ8/PztLS0zc3N6enp/v7+q6ur2NjY9/f3srKy/Pz8p6en7u7uoaGhnJyc4eHhtbW1pqam6Ojo9fX17e3toqKirKys1NTUzs7Ox8fHwcHBwMDA5eXlnZ2dpaWl0dHR9vb25ubm4uLi3d3dqqqqwsLCv7+/oKCgmZmZ////8yEsbwAAAMBJREFUeNrE0tcOgjAUBuDSliUoMhTEvfdef9//xUQjgaLX0Ium/ZLT/+SkRPxZpGykvuf5VMJogy5jY9yjDHcWFhqlcRuHc4o6B1QK0BDg+hcZgNDh3NWTwzItH/bRrhvT+g3zSxZkNGCZpoWGIbU0a3Y6zV5VA6keyeDxiw62P0gUqEW0FbDim4nVikFJbU2zZXybUEaxhCqOQqyh5/G0wpWICUwthyqwD4InOMuXJ7/gs7WkoPdVg1vykF8CDACEFanKO3aSYwAAAABJRU5ErkJggg==';
 
+	var addStats = function(data, status, $widget) {
+		
+		var downloads = {
+				sparkLineDataWeek: [],
+				sparkLineDataMonth: [],
+				sparkLineDataYear: []
+			},
+			loopnum = 0,
+			loopcount = 0,
+			dataAsArr = [],
+			maxPerDay = 0;
+
+		$.each(data, function(date, count) {
+			dataAsArr.push({ date: date, count: count });
+			maxPerDay = Math.max(maxPerDay, count);
+		});
+
+		// Loop backwards to get dates in order
+		var length = dataAsArr.length;
+
+		while (length--) {
+			
+			// console.log( dataAsArr[length] );
+
+			loopcount = loopcount + parseInt(dataAsArr[length].count, 10);
+
+			if (loopnum === 0)
+				downloads.oneDay = loopcount;
+
+			if (loopnum === 1)
+				downloads.twoDays = loopcount;
+
+			if (loopnum === 6)
+				downloads.week = loopcount;
+
+			if (loopnum === 29)
+				downloads.month = loopcount;
+
+			if (loopnum === 363)
+				downloads.year = loopcount;
+
+			// Sparkline is 0-100. maxPerDay = 100
+			if (loopnum <= 363)
+				downloads.sparkLineDataYear.push( Math.round( ( dataAsArr[length].count / maxPerDay ) * 100 ));
+
+			if (loopnum < 30)
+				downloads.sparkLineDataMonth.push( Math.round( ( dataAsArr[length].count / maxPerDay ) * 100 ));
+
+			if (loopnum < 7)
+				downloads.sparkLineDataWeek.push( Math.round( ( dataAsArr[length].count / maxPerDay ) * 100 ));
+
+
+			loopnum++;
+
+		}
+
+		var output = "Downloads: ";
+		if (downloads.oneDay)
+			output += " yesterday " + downloads.oneDay;
+		if (downloads.twoDays)
+			output += ", 2d " + downloads.twoDays;
+		if (downloads.week)
+			output += " 7d " + downloads.week;
+		if (downloads.month)
+			output += " 30d " + downloads.month;
+		if (downloads.year)
+			output += " 1y " + downloads.year;
+
+		output += "<br>" + "<img src='" + "https://chart.googleapis.com/chart?chs=50x20&cht=ls&chco=0077CC&chd=t:" + downloads.sparkLineDataWeek.join(",") + "'>";
+		output += "<br>" + "<img src='" + "https://chart.googleapis.com/chart?chs=50x20&cht=ls&chco=0077CC&chd=t:" + downloads.sparkLineDataMonth.join(",") + "'>";
+		output += "<br>" + "<img src='" + "https://chart.googleapis.com/chart?chs=50x20&cht=ls&chco=0077CC&chd=t:" + downloads.sparkLineDataYear.join(",") + "'>";
+		$widget.find(".wordpress-box-download .downloads").html( output );
+	};
+
 	var parseJson = function(results, $widget) {
 	
 		if ( null === results) return;
@@ -79,7 +153,7 @@ jQuery(document).ready(function($){
 			+'.wordpress-box .wordpress-box-content{padding:10px;font-weight:300;min-height:4.1em;}'
 			+'.wordpress-box .wordpress-box-content p{margin:0}'
 			+'.wordpress-box .wordpress-box-content .link{font-weight:bold}'
-			+'.wordpress-box .wordpress-box-download{position:relative;border-top:1px solid #ddd;background:white;border-radius:0 0 3px 3px;padding:10px;height:24px}'
+			+'.wordpress-box .wordpress-box-download{position:relative;border-top:1px solid #ddd;background:white;border-radius:0 0 3px 3px;padding:10px;min-height:24px}'
 			+'.wordpress-box .wordpress-box-download .updated{margin:0;font-size:11px;color:#666;line-height:24px;font-weight:300}'
 			+'.wordpress-box .wordpress-box-download .updated strong{font-weight:bold;color:#000}'
 			+'.wordpress-box .wordpress-box-download .download{position:absolute;display:block;top:10px;right:10px;height:24px;line-height:24px;font-size:12px;color:#666;font-weight:bold;text-shadow:0 1px 0 rgba(255,255,255,0.9);padding:0 10px;border:1px solid #ddd;border-bottom-color:#bbb;border-radius:3px;background:#f5f5f5;background:-moz-linear-gradient(#f5f5f5,#e5e5e5);background:-webkit-linear-gradient(#f5f5f5,#e5e5e5);}'
@@ -121,6 +195,7 @@ jQuery(document).ready(function($){
 			'</div>' +
 			'<div class="wordpress-box-download">' +
 			'<p class="updated"></p>' +
+			'<p class="downloads"></p>' +
 			'<a class="download" href="' + '">Download as zip</a>' +
 			'</div>' +
 			'</div>'
@@ -154,6 +229,16 @@ jQuery(document).ready(function($){
 			url: plugin_info_url,
 			dataType: 'jsonp',
 			jsonp: " "
+		});
+
+		// Get download stats
+		var statsURL = "http://api.wordpress.org/stats/plugin/1.0/downloads.php?slug=" + pluginSlug + "&limit=365&callback=?";
+		$.ajax({
+			url: statsURL,
+			dataType: 'jsonp',
+			success: function(data, status) {
+				addStats(data, status, $widget);
+			}
 		});
 
 	});
