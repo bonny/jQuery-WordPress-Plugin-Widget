@@ -17,9 +17,13 @@ Everwhere you want a widget to be placed, add the following markup:
 
 Then include the javascript file somewhere after you've include jQuery:
 
-	<script type="text/javascript" src="jquery.WordPressPluginWidget.js"></script>
+	<script src="jquery.WordPressPluginWidget.js"></script>
 
 That's it!
+
+## Version history
+
+1.0 It works!
 
 ## Credits
 
