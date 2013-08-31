@@ -1,0 +1,8 @@
+{
+  "name": "WordPress-Plugin-Widget",
+  "description": "Drop this script on your page and it will build you a beautiful widget that displays the status of your WordPress plugin.",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
