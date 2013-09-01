@@ -137,7 +137,7 @@ jQuery(document).ready(function($){
 		$widget.find('.wordpress-stars').text(ratingText).css("width", stars_width);
 		$widget.find('.wordpress-stars-wrap').attr("title", ratingText);
 		$widget.find('.wordpress-rating').html( "From " + results.num_ratings + ( ( results.num_ratings === 1) ? " user." : " users.")  );
-		
+
 		// Description
 		$widget.find('.description span').html(results.short_description);
 
@@ -160,12 +160,12 @@ jQuery(document).ready(function($){
 			+ '.wordpress-box{font-family:helvetica,arial,sans-serif;font-size:13px;line-height:18px;background:#fafafa;border:1px solid #ddd;color:#666;border-radius:3px}'
 			+ '.wordpress-box a{color:#4183c4;border:0;text-decoration:none}'
 			+ '.wordpress-box .wordpress-box-title{position:relative;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;background:#fcfcfc;background:-moz-linear-gradient(#fcfcfc,#ebebeb);background:-webkit-linear-gradient(#fcfcfc,#ebebeb);background: #222;color:#ddd;}'
-			+ '.wordpress-box-title a { color: #ddd;}'
-			+ '.wordpress-box-title a:hover { color: #2faadd;}'
+			+ '.wordpress-box-title a, a.wordpress-stars-link { color: #ddd;}'
+			+ '.wordpress-box-title a:hover, a.wordpress-stars-link:hover { color: #2faadd; }'
 			+ '.wordpress-box .wordpress-box-title h3{font-family:helvetica,arial,sans-serif;font-weight:normal;font-size:16px;color:gray;margin:0 115px 0 0;padding:10px;}'
 			+ '.wordpress-box .wordpress-box-title h3 .repo{font-weight:bold}'
 			+ '.wordpress-box .wordpress-box-title .wordpress-stats{position:absolute;top:4px;right:10px;xbackground:white;xborder:1px solid #ddd;border-radius:3px;font-size:11px;xfont-weight:bold;line-height:18px;height:18px;padding:0 .5em}'
-			+ '.wordpress-box .wordpress-box-title .wordpress-stats a{display:inline-block;height:21px;color:#666;padding:0 5px 0 18px;}'
+			+ '.wordpress-box .wordpress-box-title .wordpress-stats a{display:inline-block;height:21px;padding:0 5px 0 18px;}'
 			+ '.wordpress-box .wordpress-box-content{padding:10px;font-weight:300;min-height:4.1em;}'
 			+ '.wordpress-box .wordpress-box-content p{margin:0}'
 			+ '.wordpress-box .wordpress-box-content .link{font-weight:bold}'
@@ -198,8 +198,10 @@ jQuery(document).ready(function($){
 			'<a class="owner" href=""></a>' +
 			'</h3>' +
 			'<div class="wordpress-stats">' +
+			'<a class="wordpress-stars-link" href="http://wordpress.org/support/view/plugin-reviews/' + pluginSlug + '">' +
 			'<div class="wordpress-stars-wrap"><div class="wordpress-stars"></div></div>' +
 			'<div class="wordpress-rating"></div>' +
+			'</a>' +
 			'</div>' +
 			'</div>' +
 			'<div class="wordpress-box-content">' +
