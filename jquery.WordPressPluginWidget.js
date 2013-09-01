@@ -48,8 +48,6 @@ jQuery(document).ready(function($){
 
 		while (length--) {
 			
-			// console.log( dataAsArr[length] );
-
 			loopcount = loopcount + parseInt(dataAsArr[length].count, 10);
 
 			if (loopnum === 0)
@@ -147,11 +145,9 @@ jQuery(document).ready(function($){
 		var pluginUrl = "http://wordpress.org/plugins/" + results.slug + "/";
 		var pluginUrlAlternative = "http://wordpress.org/extend/plugins/" + results.slug + "/";
 		if ( results.homepage === pluginUrl || results.homepage === pluginUrlAlternative ) {
-			// console.log("samma url!")
 			$widget.find('.link').hide();
 			$widget.find('.wordpress-link-divider-first').hide();
 		} else {
-			console.log(results.homepage);
 			$widget.find('.link').attr('href', results.homepage);
 		}
 
