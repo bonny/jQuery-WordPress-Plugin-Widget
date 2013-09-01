@@ -142,7 +142,18 @@ jQuery(document).ready(function($){
 		$widget.find('.description span').html(results.short_description);
 
 		// Homepage link
-		$widget.find('.link').append($('<a />').attr('href', results.homepage).text(results.homepage));
+		// First check if homepage link is same as wordpress link
+		// and if it is then don't output homepage link
+		var pluginUrl = "http://wordpress.org/plugins/" + results.slug + "/";
+		var pluginUrlAlternative = "http://wordpress.org/extend/plugins/" + results.slug + "/";
+		if ( results.homepage === pluginUrl || results.homepage === pluginUrlAlternative ) {
+			// console.log("samma url!")
+			$widget.find('.link').hide();
+			$widget.find('.wordpress-link-divider-first').hide();
+		} else {
+			console.log(results.homepage);
+			$widget.find('.link').attr('href', results.homepage);
+		}
 
 		// Download link
 		$widget.find('.download').attr( "href", results.download_link );
@@ -168,7 +179,9 @@ jQuery(document).ready(function($){
 			+ '.wordpress-box .wordpress-box-title .wordpress-stats a{display:inline-block;height:21px;padding:0 5px 0 18px;}'
 			+ '.wordpress-box .wordpress-box-content{padding:10px;font-weight:300;min-height:4.1em;}'
 			+ '.wordpress-box .wordpress-box-content p{margin:0}'
-			+ '.wordpress-box .wordpress-box-content .link{font-weight:bold}'
+			+ '.wordpress-box .wordpress-box-content .links {margin:.5em 0 0 0}'
+			+ '.wordpress-box .wordpress-link-divider {color:#aaa; margin: 0 .25em; }'
+			+ '.xwordpress-box .wordpress-box-content .link{font-weight:bold}'
 			+ '.wordpress-box .wordpress-box-download{position:relative;border-top:1px solid #ddd;background:white;border-radius:0 0 3px 3px;padding:10px;min-height:24px}'
 			+ '.wordpress-box .wordpress-box-download .updated, .wordpress-box .wordpress-box-download .downloads{margin:0;font-size:11px;color:#666;line-height:18px;font-weight:300}'
 			+ '.wordpress-box .wordpress-box-download .updated strong{font-weight:bold;color:#000}'
@@ -185,9 +198,9 @@ jQuery(document).ready(function($){
 
 		var $container = $(this), $widget,
 			pluginSlug = $container.data('slug'),
-						pluginUrl = "http://wordpress.org/plugins/" + pluginSlug + "/",
-						supportUrl = "http://wordpress.org/support/plugin/" + pluginSlug + "/",
-						authorUrl = "";
+			pluginUrl = "http://wordpress.org/plugins/" + pluginSlug + "/",
+			supportUrl = "http://wordpress.org/support/plugin/" + pluginSlug + "/",
+			authorUrl = "";
 
 		$widget = $(
 			'<div class="wordpress-box">' +
@@ -205,8 +218,16 @@ jQuery(document).ready(function($){
 			'</div>' +
 			'</div>' +
 			'<div class="wordpress-box-content">' +
-			'<p class="description"><span></span> &mdash; <a href="' + pluginUrl + '">Read More</a></p>' +
-			'<p class="link"></p>' +
+			'<p class="description"><span></span>' +
+			// ' &mdash; <a href="' + pluginUrl + '">Read More</a></p>' +
+			
+			'<p class="links">' +
+			' <a class="link" href="#">Homepage</a>' +
+			' <span class="wordpress-link-divider wordpress-link-divider-first">|</span> <a href="' + pluginUrl + '">Info at WordPress.org</a>' +
+			' <span class="wordpress-link-divider wordpress-link-divider-second">|</span> <a class="support" href="http://wordpress.org/support/plugin/' + pluginSlug + '">Support forum</a>' +
+			'</p>' +
+
+			// '<p class="link"></p>' +
 			'</div>' +
 			'<div class="wordpress-box-download">' +
 			'<p class="updated"></p>' +
