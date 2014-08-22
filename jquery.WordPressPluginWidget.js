@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 
 	var distance_of_time_in_words = function(to, from) {
-		
+
 		var distance_in_seconds = ((to - from) / 1000),
 			distance_in_minutes = Math.floor( distance_in_seconds / 60 );
 
@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
 
 		return 'over ' + Math.floor(distance_in_minutes / 525960) + ' years ago';
 	};
-	
+
 	var i = 0;
 
 	// http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
 	};
 
 	var addStats = function(data, status, $widget) {
-		
+
 		var downloads = {
 				sparkLineDataWeek: [],
 				sparkLineDataMonth: [],
@@ -47,7 +47,7 @@ jQuery(document).ready(function($){
 		var length = dataAsArr.length;
 
 		while (length--) {
-			
+
 			loopcount = loopcount + parseInt(dataAsArr[length].count, 10);
 
 			if (loopnum === 0)
@@ -77,26 +77,26 @@ jQuery(document).ready(function($){
 		}
 
 		var output = "";
-		
+
 		// Average downloads per day
 		output += "Average " + formatNumber(Math.round(loopcount / loopnum)) + " downloads per day";
 
 		/*
 		output += "Downloads ";
-		
+
 		if (downloads.oneDay)
 			output += " yesterday " + formatNumber(downloads.oneDay) + ", ";
-				
+
 		if (downloads.week) {
 			output += " 7d " + formatNumber(downloads.week) + ", ";
 			output += "<img src='" + "https://chart.googleapis.com/chart?chs=50x20&cht=ls&chco=0077CC&chd=t:" + downloads.sparkLineDataWeek.join(",") + "'>";
 		}
-		
+
 		if (downloads.month) {
 			output += " 30d " + formatNumber(downloads.month) + ", ";
 			output += "<img src='" + "https://chart.googleapis.com/chart?chs=50x20&cht=ls&chco=0077CC&chd=t:" + downloads.sparkLineDataMonth.join(",") + "'>";
 		}
-		
+
 		if (downloads.year) {
 			output += " 1y " + formatNumber(downloads.year) + ", ";
 			output += "<img src='" + "https://chart.googleapis.com/chart?chs=50x20&cht=ls&chco=0077CC&chd=t:" + downloads.sparkLineDataYear.join(",") + "'>";
@@ -107,7 +107,7 @@ jQuery(document).ready(function($){
 	};
 
 	var parseJson = function(results, $widget) {
-	
+
 		if ( null === results) return;
 
 		// Date updated
@@ -166,6 +166,7 @@ jQuery(document).ready(function($){
 			'<style type="text/css">'
 			+ '.wordpress-box{font-family:helvetica,arial,sans-serif;font-size:13px;line-height:18px;background:#fafafa;border:1px solid #ddd;color:#666;border-radius:3px}'
 			+ '.wordpress-box a{color:#4183c4;border:0;text-decoration:none}'
+			+ '.wordpress-box .wordpress-banner-image { height: 150px; background-size: cover; background-repeat: no-repeat; } '
 			+ '.wordpress-box .wordpress-box-title{position:relative;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;background:#fcfcfc;background:-moz-linear-gradient(#fcfcfc,#ebebeb);background:-webkit-linear-gradient(#fcfcfc,#ebebeb);background: #222;color:#ddd;}'
 			+ '.wordpress-box-title a, a.wordpress-stars-link { color: #ddd;}'
 			+ '.wordpress-box-title a:hover, a.wordpress-stars-link:hover { color: #2faadd; }'
@@ -196,10 +197,12 @@ jQuery(document).ready(function($){
 			pluginSlug = $container.data('slug'),
 			pluginUrl = "http://wordpress.org/plugins/" + pluginSlug + "/",
 			supportUrl = "http://wordpress.org/support/plugin/" + pluginSlug + "/",
+			pluginBanner = $container.data('banner'),
 			authorUrl = "";
 
 		$widget = $(
 			'<div class="wordpress-box">' +
+			'<div class="wordpress-banner-image"></div>' +
 			'<div class="wordpress-box-title">' +
 			'<h3>' +
 			'<a class="repo" href="' + pluginUrl + '">' + '&nbsp;</a>' +
@@ -216,7 +219,7 @@ jQuery(document).ready(function($){
 			'<div class="wordpress-box-content">' +
 			'<p class="description"><span></span>' +
 			// ' &mdash; <a href="' + pluginUrl + '">Read More</a></p>' +
-			
+
 			'<p class="links">' +
 			' <a class="link" href="#">Homepage</a>' +
 			' <span class="wordpress-link-divider wordpress-link-divider-first">|</span> <a href="' + pluginUrl + '">Info at WordPress.org</a>' +
@@ -234,21 +237,20 @@ jQuery(document).ready(function($){
 		);
 
 		// Get banner image
-		// Disabled for now, couldn't find any nice place for it
-		/*
-		var bannerImageUrl = "http://s-plugins.wordpress.org/" + pluginSlug + "/assets/banner-772x250.png";
-		var bannerImg = document.createElement("img");
-		bannerImg.onload = (function() {
-				return function() {
-					//console.log(this);
-					//console.log(bannerImageUrl);
-					$widget.find(".wordpress-box-content").css({
-						backgroundImage: "url(" + this.src + ")"
-					});
-				};
-			})();
-		bannerImg.src = bannerImageUrl;
-		*/
+		if(pluginBanner !== 'none') {
+			var bannerImageUrl = "http://s-plugins.wordpress.org/" + pluginSlug + "/assets/banner-772x250.png";
+			var bannerImg = document.createElement("img");
+			bannerImg.onload = (function() {
+					return function() {
+						$widget.find(".wordpress-banner-image").css("background-image",  "url(" + this.src + ")" );
+					};
+				})();
+
+			bannerImg.src = bannerImageUrl;
+
+		} else {
+			$widget.find(".wordpress-banner-image").css("background-image",  "url(https://dl.dropboxusercontent.com/u/1162759/fallback-banner-image.png)" );
+		}
 
 		$widget.appendTo($container);
 
@@ -256,7 +258,7 @@ jQuery(document).ready(function($){
 		var json_func_name = "wp_plugin_widget_" + Math.random().toString(36).replace(/[^a-z+]+/g, "");
 		window[ json_func_name ] = function(data) { parseJson(data, $widget); };
 		var plugin_info_url = "http://api.wordpress.org/plugins/info/1.0/" + pluginSlug + ".jsonp=" + json_func_name + "&?";
-		
+
 		$.ajax({
 			url: plugin_info_url,
 			dataType: 'jsonp',
