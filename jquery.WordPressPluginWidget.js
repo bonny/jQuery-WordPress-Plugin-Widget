@@ -180,7 +180,7 @@ jQuery(document).ready(function($){
 			+ '.wordpress-box .wordpress-link-divider {color:#aaa; margin: 0 .25em; }'
 			+ '.xwordpress-box .wordpress-box-content .link{font-weight:bold}'
 			+ '.wordpress-box .wordpress-box-download{position:relative;border-top:1px solid #ddd;background:white;border-radius:0 0 3px 3px;padding:10px;min-height:24px}'
-			+ '.wordpress-box .wordpress-box-download .updated, .wordpress-box .wordpress-box-download .downloads{margin:0;font-size:11px;color:#666;line-height:18px;font-weight:300}'
+			+ '.wordpress-box .wordpress-box-download .updated, .wordpress-box .wordpress-box-download .downloads{margin:0;font-size:11px;color:#666;line-height:18px;font-weight:300;margin-right:10em;}'
 			+ '.wordpress-box .wordpress-box-download .updated strong{font-weight:bold;color:#000}'
 			+ '.wordpress-box .wordpress-box-download .download{position:absolute;display:block;top:14px;right:10px;height:24px;line-height:24px;font-size:12px;color:#666;font-weight:bold;text-shadow:0 1px 0 rgba(255,255,255,0.9);padding:0 10px;border:1px solid #ddd;border-bottom-color:#bbb;border-radius:3px;background:#f5f5f5;background:-moz-linear-gradient(#f5f5f5,#e5e5e5);background:-webkit-linear-gradient(#f5f5f5,#e5e5e5);}'
 			+ '.wordpress-box .wordpress-box-download .download:hover{color:#527894;border-color:#cfe3ed;border-bottom-color:#9fc7db;background:#f1f7fa;background:-moz-linear-gradient(#f1f7fa,#dbeaf1);background:-webkit-linear-gradient(#f1f7fa,#dbeaf1);}'
