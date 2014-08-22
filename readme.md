@@ -13,7 +13,7 @@ Something like this:
 
 Sure! Here you go:
 
-[WordPress Plugin Widget Demo](http://eskapism.se/playground/widgets/jQuery-WordPress-Plugin-Widget/demo/index.html)
+[WordPress Plugin Widget Demo](http://bonny.github.io/jQuery-WordPress-Plugin-Widget/)
 
 ## How do I use it?
 
