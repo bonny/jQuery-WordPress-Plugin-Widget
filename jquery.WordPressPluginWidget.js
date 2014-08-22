@@ -231,7 +231,7 @@ jQuery(document).ready(function($){
 			'<div class="wordpress-box-download">' +
 			'<p class="updated"></p>' +
 			'<p class="downloads"></p>' +
-			'<a class="download" href="' + '">Download as zip</a>' +
+			'<a class="download" href="' + '">Download zip</a>' +
 			'</div>' +
 			'</div>'
 		);
