@@ -7,7 +7,7 @@ that displays the status of your WordPress plugin.
 
 Something like this:
 
-![Widget Image](https://raw.github.com/bonny/jQuery-WordPress-Plugin-Widget/master/screenshot.png)
+![Widget Image](https://raw.github.com/bonny/jQuery-WordPress-Plugin-Widget/master/screenshot.png)[1]
 
 ## How about a real demo
 
@@ -47,3 +47,5 @@ That's it!
 This plugin is based on [GitHub jQuery Repo Widget](https://github.com/JoelSutherland/GitHub-jQuery-Repo-Widget). I've only changed it to fetch data from WordPress.org instead of GitHub, and then I also changed it to look to be bit more WordPress-ish.
 
 The original license in included in this folder, and it's also available here: [license](https://github.com/bonny/jQuery-WordPress-Plugin-Widget/blob/master/LICENSE-GitHub-jQuery-Repo-Widget).
+
+  [1]: bonny.github.io/jQuery-WordPress-Plugin-Widget/
