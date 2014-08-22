@@ -48,4 +48,4 @@ This plugin is based on [GitHub jQuery Repo Widget](https://github.com/JoelSuthe
 
 The original license in included in this folder, and it's also available here: [license](https://github.com/bonny/jQuery-WordPress-Plugin-Widget/blob/master/LICENSE-GitHub-jQuery-Repo-Widget).
 
-  [1]: bonny.github.io/jQuery-WordPress-Plugin-Widget/
+  [1]: http://bonny.github.io/jQuery-WordPress-Plugin-Widget/
