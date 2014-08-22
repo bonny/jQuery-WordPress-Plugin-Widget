@@ -166,7 +166,7 @@ jQuery(document).ready(function($){
 			'<style type="text/css">'
 			+ '.wordpress-box{font-family:helvetica,arial,sans-serif;font-size:13px;line-height:18px;background:#fafafa;border:1px solid #ddd;color:#666;border-radius:3px}'
 			+ '.wordpress-box a{color:#4183c4;border:0;text-decoration:none}'
-			+ '.wordpress-box .wordpress-banner-image { height: 150px; background-size: cover; background-repeat: no-repeat; } '
+			+ '.wordpress-box .wordpress-banner-image { height: 150px; background-size: cover; background-position: center center; background-repeat: no-repeat; } '
 			+ '.wordpress-box .wordpress-box-title{position:relative;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;background:#fcfcfc;background:-moz-linear-gradient(#fcfcfc,#ebebeb);background:-webkit-linear-gradient(#fcfcfc,#ebebeb);background: #222;color:#ddd;}'
 			+ '.wordpress-box-title a, a.wordpress-stars-link { color: #ddd;}'
 			+ '.wordpress-box-title a:hover, a.wordpress-stars-link:hover { color: #2faadd; }'
