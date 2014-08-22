@@ -29,7 +29,18 @@ That's it!
 
 ## Version history
 
-1.0 It works!
+### 1.1 
+
+- Added plugin banner header images
+- Data attribute for when not using headers, then a fallback image is used
+- Added a nice pushed down active state for the download button
+- Demo page: distribute widgets horizontally
+- Demo page: responsive styles
+- Demo page: official WordPress blue hex color for links
+
+### 1.0
+
+- It works!
 
 ## Credits
 
