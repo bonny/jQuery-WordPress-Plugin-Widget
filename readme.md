@@ -7,7 +7,7 @@ that displays the status of your WordPress plugin.
 
 Something like this:
 
-![Widget Image](https://raw.github.com/bonny/jQuery-WordPress-Plugin-Widget/master/screenshot.png)[1]
+[![Widget Image](https://raw.github.com/bonny/jQuery-WordPress-Plugin-Widget/master/screenshot.png)][1]
 
 ## How about a real demo
 
