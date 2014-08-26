@@ -200,6 +200,7 @@ jQuery(document).ready(function($){
 			pluginUrl = "http://wordpress.org/plugins/" + pluginSlug + "/",
 			supportUrl = "http://wordpress.org/support/plugin/" + pluginSlug + "/",
 			pluginBanner = $container.data('banner'),
+			pluginBannerFormat = $container.data('banner-format'),
 			authorUrl = "";
 
 		$widget = $(
@@ -240,7 +241,7 @@ jQuery(document).ready(function($){
 
 		// Get banner image
 		if(pluginBanner !== 'none') {
-			var bannerImageUrl = "http://s-plugins.wordpress.org/" + pluginSlug + "/assets/banner-772x250.png";
+			var bannerImageUrl = (pluginBannerFormat == "jpg") ? "http://s-plugins.wordpress.org/" + pluginSlug + "/assets/banner-772x250.jpg" : "http://s-plugins.wordpress.org/" + pluginSlug + "/assets/banner-772x250.png";
 			var bannerImg = document.createElement("img");
 			bannerImg.onload = (function() {
 					return function() {
