@@ -166,7 +166,7 @@ jQuery(document).ready(function($){
 			'<style type="text/css">'
 			+ '.wordpress-box{font-family:helvetica,arial,sans-serif;font-size:13px;line-height:18px;background:#fafafa;border:1px solid #ddd;color:#666;border-radius:3px}'
 			+ '.wordpress-box a{color:#4183c4;border:0;text-decoration:none}'
-			+ '.wordpress-box .wordpress-banner-image { height: 150px; background-size: cover; background-position: center center; background-repeat: no-repeat; cursor: pointer } '
+			+ '.wordpress-box .wordpress-banner-image { display: block; height: 150px; background-size: cover; background-position: center center; background-repeat: no-repeat; cursor: pointer } '
 			+ '.wordpress-box .wordpress-box-title{position:relative;border-bottom:1px solid #ddd;border-radius:3px 3px 0 0;background:#fcfcfc;background:-moz-linear-gradient(#fcfcfc,#ebebeb);background:-webkit-linear-gradient(#fcfcfc,#ebebeb);background: #222;color:#ddd;}'
 			+ '.wordpress-box-title a, a.wordpress-stars-link { color: #ddd;}'
 			+ '.wordpress-box-title a:hover, a.wordpress-stars-link:hover { color: #2faadd; }'
@@ -205,7 +205,7 @@ jQuery(document).ready(function($){
 
 		$widget = $(
 			'<div class="wordpress-box">' +
-			'<div class="wordpress-banner-image"></div>' +
+			'<a class="wordpress-banner-image"></a>' +
 			'<div class="wordpress-box-title">' +
 			'<h3>' +
 			'<a class="repo" href="' + pluginUrl + '">' + '&nbsp;</a>' +
@@ -255,11 +255,12 @@ jQuery(document).ready(function($){
 			$widget.find(".wordpress-banner-image").css("background-image",  "url(https://dl.dropboxusercontent.com/u/1162759/fallback-banner-image.png)" );
 		}
 
-		// Go to plugin url on banner click, yes use _blank here
-		$('.wordpress-banner-image').on('click', function(e) {
-			var url = $(this).next().find('.repo').attr('href');
-			window.open(url, '_blank');
-			e.preventDefault();
+		// Set href on banner images
+		$(window).load(function() {
+			$('a.wordpress-banner-image').each(function() {
+				var url = $(this).next().find('.repo').attr('href');
+				$(this).attr('href', url);
+			});
 		});
 
 		$widget.appendTo($container);
