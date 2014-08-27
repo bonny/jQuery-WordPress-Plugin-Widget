@@ -42,7 +42,7 @@ optional, set to `data-banner="none"` if your plugin does not have a banner imag
 ### 1.1.1
 
 - Banner image is now clickable
-- Banner image now supports PNG (default is JPG)
+- Banner image now also supports JPG (default is PNG)
 
 ### 1.1 
 
