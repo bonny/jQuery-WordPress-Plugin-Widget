@@ -37,8 +37,6 @@ optional, the image format of your banner image. Default is PNG, set this to JPG
 optional, set to `data-banner="none"` if your plugin does not have a banner image
 
 
-That's it!
-
 ## Version history
 
 ### 1.1.1
