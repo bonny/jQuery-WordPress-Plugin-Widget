@@ -25,9 +25,24 @@ Then include the javascript file somewhere after you've include jQuery:
 
 	<script src="jquery.WordPressPluginWidget.js"></script>
 
-That's it!
+### Options
+
+* `data-slug`  
+required - the slug of your plugin
+
+* `data-banner-format`  
+optional, the image format of your banner image. Default is PNG, set this to JPG if your banner image is in JPEG and not PNG.
+
+* `data-banner`  
+optional, set to `data-banner="none"` if your plugin does not have a banner image
+
 
 ## Version history
+
+### 1.1.1
+
+- Banner image is now clickable
+- Banner image now supports PNG (default is JPG)
 
 ### 1.1 
 
