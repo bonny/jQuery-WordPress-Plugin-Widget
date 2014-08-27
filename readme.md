@@ -27,10 +27,14 @@ Then include the javascript file somewhere after you've include jQuery:
 
 ### Options
 
-* `data-slug`required - the slug of your plugin
+* `data-slug`  
+required - the slug of your plugin
 
-data-banner-format - optional, the image format of your banner image. Default is PNG, set this to JPG if your banner image is in JPEG and not PNG.
-data-banner - optional, set to `data-banner="none"` if your plugin does not have a banner image
+* `data-banner-format`  
+optional, the image format of your banner image. Default is PNG, set this to JPG if your banner image is in JPEG and not PNG.
+
+* `data-banner`  
+optional, set to `data-banner="none"` if your plugin does not have a banner image
 
 
 That's it!
