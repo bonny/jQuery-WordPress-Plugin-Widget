@@ -29,6 +29,11 @@ That's it!
 
 ## Version history
 
+### 1.1.1
+
+- Banner image is now clickable
+- Banner image now supports PNG (default is JPG)
+
 ### 1.1 
 
 - Added plugin banner header images
