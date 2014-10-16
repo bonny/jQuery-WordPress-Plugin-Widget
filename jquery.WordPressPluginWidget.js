@@ -111,9 +111,12 @@ jQuery(document).ready(function($){
 		if ( null === results) return;
 
 		// Date updated
-		var lastUpdatedDate = new Date(results.last_updated),
+		// results.last_updated: "2014-09-10 4:16pm GMT"
+		// last_updated: "2014-10-16 2:55am GMT",
+		var lastUpdatedDate = new Date( results.last_updated.replace(/am|pm GMT/, "") ),
 			lastUpdatedReadable = distance_of_time_in_words(new Date(), lastUpdatedDate),
 			lastUpdated = lastUpdatedDate.toDateString();
+
 		$widget.find('.updated').html('Plugin last updated ' + lastUpdatedReadable + " (" + lastUpdated + ")");
 
 		// Author url. Can be multiple, we are lazy and just get the first one
@@ -266,6 +269,7 @@ jQuery(document).ready(function($){
 		$widget.appendTo($container);
 
 		// URL to get plugin info is a bit strange, so that's why we need to create our own JSONP function
+		// Use predictable callback function to increase chance of caching
 		var json_func_name = "wp_plugin_widget_" + Math.random().toString(36).replace(/[^a-z+]+/g, "");
 		window[ json_func_name ] = function(data) { parseJson(data, $widget); };
 		var plugin_info_url = "http://api.wordpress.org/plugins/info/1.0/" + pluginSlug + ".jsonp=" + json_func_name + "&?";
