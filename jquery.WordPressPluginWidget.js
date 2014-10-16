@@ -270,14 +270,15 @@ jQuery(document).ready(function($){
 
 		// URL to get plugin info is a bit strange, so that's why we need to create our own JSONP function
 		// Use predictable callback function to increase chance of caching
-		var json_func_name = "wp_plugin_widget_" + Math.random().toString(36).replace(/[^a-z+]+/g, "");
+		var json_func_name = "wp_plugin_widget_callback_" + pluginSlug.replace(/[^a-z+]+/g, "");
 		window[ json_func_name ] = function(data) { parseJson(data, $widget); };
-		var plugin_info_url = "http://api.wordpress.org/plugins/info/1.0/" + pluginSlug + ".jsonp=" + json_func_name + "&?";
+		var plugin_info_url = "http://api.wordpress.org/plugins/info/1.0/" + pluginSlug + ".jsonp=" + json_func_name + "";
 
 		$.ajax({
 			url: plugin_info_url,
 			dataType: 'jsonp',
-			jsonp: " "
+			jsonp: false,
+			cache: true
 		});
 
 		// Get download stats
