@@ -3,6 +3,8 @@
 Drop this script on your page and it will build you a beautiful widget
 that displays the status of your WordPress plugin.
 
+[Test the widget online with your own WordPress.org username.](http://wp-plugin-stats.com/)
+
 ## What does it look like?
 
 Something like this:
